@@ -1,16 +1,22 @@
 library(shiny)
 
+shinyUI(
+  fluidPage(
+    titlePanel('Peakflow Analysis'),
 
-shinyUI(pageWithSidebar(
-  headerPanel('Peakflow Analysis'),
-
-  sidebarPanel(
-    numericInput("pf.value", label = "L/min", value = 600),
-    textInput("pf.comment", label = "Optional comment", value = ""),
-    actionButton("addRow", "Add")
-  ),
-
-  mainPanel(
-    tableOutput("table")
+    fluidRow(
+      column(6,
+        wellPanel(
+          numericInput("pf.value", label = "l/min", value = 600),
+          textInput("pf.comment", label = "Optional comment", value = ""),
+          actionButton("addRow", "Add")
+        )
+      ),
+      column(12,
+        mainPanel(
+          tableOutput("table")
+        )
+      )
+    )
   )
-))
+)
