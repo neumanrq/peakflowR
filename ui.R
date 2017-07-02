@@ -1,10 +1,7 @@
 library(shiny)
 
-# example from http://shiny.rstudio.com/gallery/kmeans-example.html
-
-# Define UI for application that plots random distributions
 shinyUI(pageWithSidebar(
-  headerPanel('Iris k-means clustering'),
+  headerPanel('Peakflow Data Analysis'),
   sidebarPanel(
     selectInput('xcol', 'X Variable', names(iris)),
     selectInput('ycol', 'Y Variable', names(iris),

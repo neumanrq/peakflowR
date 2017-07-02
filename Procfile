@@ -1,1 +1,1 @@
-web: R -f ./run.R --gui-none --no-save
+web: R -e "library(shiny);port <- Sys.getenv('PORT');shiny::runApp(appDir = getwd(), host = '0.0.0.0', port = as.numeric(port));" --no-gui --no-save
