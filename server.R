@@ -1,3 +1,5 @@
+install.packages("shiny")
+22
 library(shiny)
 
 # Define server logic required to generate and plot a random distribution

@@ -1,3 +1,5 @@
+install.packages("shiny")
+22
 library(shiny)
 
 # Define UI for application that plots random distributions
