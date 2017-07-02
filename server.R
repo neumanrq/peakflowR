@@ -1,17 +1,19 @@
 library(shiny)
 
 shinyServer(function(input, output, session) {
-  values <- reactiveValues()
-
-  init.peakflow <- c(600, 650, 670)
-  init.comments <- c("A", "B", "C")
-
-  values$df <- data.frame(peakflow = init.peakflow, comments = init.comments)
+  values    <- reactiveValues()
+  values$df <- read.csv(file = "data/peakflow.csv", header = TRUE)
 
   observeEvent(input$addRow, {
-    newLine <- isolate(c(input$pf.value, input$pf.comment))
-    isolate(values$df <- rbind(as.matrix(values$df), unlist(newLine)))
+    currentTime <- as.character(Sys.time())
+    newRow      <- c(input$pf.value, input$pf.comment, currentTime)
+    values$df   <- isolate(rbind(as.matrix(values$df), unlist(newRow)))
+
+    write.csv(values$df,
+              file      = "data/peakflow.csv",
+              row.names = FALSE,
+              append    = FALSE)
   })
 
-  output$table <- renderTable({values$df}, include.rownames = F)
+  output$table <- renderTable({values$df}, include.rownames = TRUE)
 })
