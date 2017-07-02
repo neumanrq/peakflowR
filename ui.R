@@ -5,8 +5,8 @@ shinyUI(pageWithSidebar(
 
   sidebarPanel(
     numericInput("pf.value", label="Value measured in L/min", value=""),
-    textInput("comment", label="Optional comment", value="Enter optional comments here"),
-    actionButton("addButton", "Add")
+    textInput("pf.comment", label="Optional comment", value="Enter optional comments here"),
+    actionButton("addRow", "Add")
   ),
 
   mainPanel(
