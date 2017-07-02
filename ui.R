@@ -1,15 +1,15 @@
 library(shiny)
 
 shinyUI(pageWithSidebar(
-  headerPanel('Peakflow Data Analysis'),
+  headerPanel('Peakflow Analysis'),
+
   sidebarPanel(
-    selectInput('xcol', 'X Variable', names(iris)),
-    selectInput('ycol', 'Y Variable', names(iris),
-                selected=names(iris)[[2]]),
-    numericInput('clusters', 'Cluster count', 3,
-                 min = 1, max = 9)
+    numericInput("pf.value", label="Value measured in L/min", value=""),
+    textInput("comment", label="Optional comment", value="Enter optional comments here"),
+    actionButton("addButton", "Add")
   ),
+
   mainPanel(
-    plotOutput('plot1')
+    tableOutput("table")
   )
 ))
