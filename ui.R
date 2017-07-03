@@ -19,7 +19,7 @@ shinyUI(
           ),
 
           wellPanel(
-            numericInput("pf.value", label = "Current peakflow (l/min) 🌬️ ", value = 600),
+            numericInput("pf.value", label = "Current peak flow (l/min) 🌬️ ", value = 600),
             selectInput('pf.cough', 'Cough', c('None', 'some', 'much')),
             selectInput('pf.breathlessness', 'Breathlessness', c('None', 'some', 'much')),
             textInput("pf.comment", label = "Optional comment", value = ""),
