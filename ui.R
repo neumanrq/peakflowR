@@ -24,11 +24,11 @@ shinyUI(
             selectInput('pf.breathlessness', 'Breathlessness', c('None', 'some', 'much')),
             textInput("pf.comment", label = "Optional comment", value = ""),
             br(),
-            checkboxInput('pf.pollen', 'I seem to struggle from pollen flying around   🌼   '),
+            checkboxInput('pf.pollen', 'I seem to suffer from pollen flying around   🌼   '),
             checkboxInput('pf.vacation', 'I am on vacation right now 🏖️ '),
             br(),
-            numericInput("pf.regularMedicine", label = "Number of hubs (regular meds) 💊 ", value = 0),
-            numericInput("pf.emergencyMedicine", label = "Number of hubs (emergency meds) 🆘", value = 0),
+            numericInput("pf.regularMedicine", label = "Number of strokes (regular meds) 💊 ", value = 0),
+            numericInput("pf.emergencyMedicine", label = "Number of strokes (emergency meds) 🆘", value = 0),
             actionButton("addRow", "Add this to dataset")
           )
         ),
