@@ -6,7 +6,14 @@ shinyServer(function(input, output, session) {
 
   observeEvent(input$addRow, {
     currentTime <- as.character(Sys.time())
-    newRow      <- c(input$pf.value, input$pf.comment, currentTime)
+    newRow      <- c(currentTime,
+                     input$pf.value,
+                     input$pf.cough,
+                     input$pf.breathlessness,
+                     input$pf.pollen,
+                     input$pf.vacation,
+                     input$pf.regularMedicine,
+                     input$pf.emergencyMedicine)
     values$df   <- rbind(as.matrix(values$df), unlist(newRow))
 
     write.csv(values$df,

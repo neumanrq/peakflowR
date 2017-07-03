@@ -7,7 +7,7 @@ shinyUI(
 
       column(12,
         column(4,
-          titlePanel('Peakflow Analysis')
+          titlePanel('Peak Flow Analysis')
         )
       ),
 
@@ -28,7 +28,7 @@ shinyUI(
             checkboxInput('pf.vacation', 'I am on vacation right now 🏖️ '),
             br(),
             numericInput("pf.regularMedicine", label = "Number of hubs (regular meds) 💊 ", value = 0),
-            numericInput("pf.emergencyMedicie", label = "Number of hubs (emergency meds) 🆘", value = 0),
+            numericInput("pf.emergencyMedicine", label = "Number of hubs (emergency meds) 🆘", value = 0),
             actionButton("addRow", "Add this to dataset")
           )
         ),
